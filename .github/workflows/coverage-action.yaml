@@ -39,6 +39,9 @@ jobs:
     - name: Install NPM dependencies
       run: yarn install
 
+    - name: Run migrations
+      run: npx prisma migrate dev
+
     - name: Run Jest tests and generate coverage report
       run: yarn test:cov
       env:
