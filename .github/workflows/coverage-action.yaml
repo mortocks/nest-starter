@@ -1,12 +1,35 @@
+# https://docs.github.com/en/actions/using-containerized-services/creating-postgresql-service-containers
 name: Build and publish test coverage
 on:
   push:
     branches:
       - main
 jobs:
+  # Label of the runner job
   build:
     runs-on: ubuntu-latest
+
+    # Service containers to run with `runner-job`
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+
     steps:
+    # Downloads a copy of the code in your repository before running CI tests
     - name: Checkout repository
       uses: actions/checkout@master
     - name: Set up Node.js
@@ -15,8 +38,15 @@ jobs:
         node-version: 16.13.2
     - name: Install NPM dependencies
       run: yarn install
+
     - name: Run Jest tests and generate coverage report
       run: yarn test:cov
+      env:
+        # The hostname used to communicate with the PostgreSQL service container
+        DATABASE_URL: localhost
+        # The default PostgreSQL port
+        POSTGRES_PORT: 5432
+    
     - name: Publish test coverage report
       uses: EndBug/add-and-commit@v4
       with:
