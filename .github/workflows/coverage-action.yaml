@@ -43,7 +43,7 @@ jobs:
       run: yarn test:cov
       env:
         # The hostname used to communicate with the PostgreSQL service container
-        DATABASE_URL: localhost
+        DATABASE_URL: postgresql://localhost:5432
         # The default PostgreSQL port
         POSTGRES_PORT: 5432
     
