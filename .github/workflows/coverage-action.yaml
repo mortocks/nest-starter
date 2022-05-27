@@ -41,6 +41,11 @@ jobs:
 
     - name: Run migrations
       run: npx prisma migrate dev
+      env:
+        # The hostname used to communicate with the PostgreSQL service container
+        DATABASE_URL: postgresql://localhost:5432
+        # The default PostgreSQL port
+        POSTGRES_PORT: 5432
 
     - name: Run Jest tests and generate coverage report
       run: yarn test:cov
