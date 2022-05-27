@@ -12,7 +12,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@master
       with:
-        node-version: 12.0.0
+        node-version: 16.13.2
     - name: Install NPM dependencies
       run: yarn install && yarn run install-peers
     - name: Run Jest tests and generate coverage report
