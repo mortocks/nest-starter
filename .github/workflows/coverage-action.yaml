@@ -63,5 +63,5 @@ jobs:
         add: docs
         force: true
         message: Add generated docs
-      # env:
-      #   GITHUB_TOKEN: $
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
