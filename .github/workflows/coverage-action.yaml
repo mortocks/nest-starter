@@ -14,9 +14,9 @@ jobs:
       with:
         node-version: 12.0.0
     - name: Install NPM dependencies
-      run: npm install && npm run install-peers
+      run: yarn install && yarn run install-peers
     - name: Run Jest tests and generate coverage report
-      run: npm test:cov
+      run: yarn test:cov
     - name: Publish test coverage report
       uses: EndBug/add-and-commit@v4
       with:
