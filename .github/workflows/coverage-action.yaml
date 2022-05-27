@@ -44,7 +44,7 @@ jobs:
       run: npx prisma migrate dev
       env:
         # The hostname used to communicate with the PostgreSQL service container
-        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/db?schema=public
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/db
         # The default PostgreSQL port
         POSTGRES_PORT: 5432
 
