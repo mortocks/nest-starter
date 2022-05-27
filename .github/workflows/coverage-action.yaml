@@ -18,6 +18,7 @@ jobs:
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -43,7 +44,7 @@ jobs:
       run: npx prisma migrate dev
       env:
         # The hostname used to communicate with the PostgreSQL service container
-        DATABASE_URL: postgresql://localhost:5432
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/db?schema=public
         # The default PostgreSQL port
         POSTGRES_PORT: 5432
 
