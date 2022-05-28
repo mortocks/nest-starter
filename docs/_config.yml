@@ -12,7 +12,6 @@ kramdown:
 
 # Theme settings
 doks:
-    baseurl:
     color_theme: # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
