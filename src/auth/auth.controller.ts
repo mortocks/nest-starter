@@ -2,6 +2,7 @@ import {
   Controller,
   Request,
   Post,
+  HttpCode,
   //UseGuards
 } from '@nestjs/common';
 // import { AuthGuard } from '@nestjs/passport';
@@ -11,6 +12,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 export class AuthController {
   // @UseGuards(AuthGuard('local'))
   @Post('login')
+  @HttpCode(200)
   @ApiOperation({ summary: 'Login' })
   @ApiTags('Authentication')
   async login(@Request() req) {
