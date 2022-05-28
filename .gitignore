@@ -2,6 +2,13 @@
 /dist
 /node_modules
 
+# Docs
+docs/_site
+docs/.sass-cache
+docs/.jekyll-cache
+docs/.jekyll-metadata
+docs/vendor
+
 # Env
 .env*
 
