@@ -1,7 +1,6 @@
 # Build settings
 lsi: false
 safe: true
-source: /docs
 incremental: false
 highlighter: rouge
 gist:
