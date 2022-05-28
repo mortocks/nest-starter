@@ -1,9 +1,8 @@
-title: myproject
-url: ""
-markdown: kramdown
-exclude: [vendor, 'README.md', 'CHANGELOG.md' ]
+title: nestjs starter
+exclude: ['README.md', 'CHANGELOG.md' ]
 # Theme settings
 doks:
+    baseurl: https://mortocks.github.io/nest-starter
     color_theme: red # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
