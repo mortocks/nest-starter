@@ -1,7 +1,7 @@
 title: myproject
 url: ""
 markdown: kramdown
-exclude: [vendor]
+exclude: [vendor, 'README.md', 'CHANGELOG.md' ]
 # Theme settings
 doks:
     color_theme: red # Available themes: blue (default), green, purple, red and yellow
@@ -33,10 +33,9 @@ doks:
 # SASS settings
 sass:
     sass_dir: ./doks-theme/_sass
-    style: :compressed
+    style: compressed
 
 # Jekyll settings
 layouts_dir: ./doks-theme/_layouts
 includes_dir: ./doks-theme/_includes
-exclude: [ 'README.md', 'CHANGELOG.md' ]
 permalink: /:title/
