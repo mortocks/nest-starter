@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from './users.service';
 import { PrismaService } from '../prisma.service';
 import { randEmail, randFullName } from '@ngneat/falso';
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
 describe('UsersService', () => {
   let service: UsersService;
@@ -10,8 +12,12 @@ describe('UsersService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [UsersService, PrismaService],
     }).compile();
-
     service = module.get<UsersService>(UsersService);
+  });
+
+  // Clear DB records
+  afterEach(async () => {
+    await prisma.user.deleteMany({});
   });
 
   it('should be defined', () => {

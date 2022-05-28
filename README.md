@@ -17,6 +17,16 @@
 $ npm install
 ```
 
+## Local setup
+
+```bash
+# Start database
+$ docker-compose up
+
+# Update env
+$ echo DATABASE_URL="postgresql://postgres:postgres@localhost:5432/nestjs?schema=public" > .env.local
+```
+
 ## Running the app
 
 ```bash
