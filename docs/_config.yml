@@ -1,18 +1,7 @@
-# Build settings
-lsi: false
-safe: true
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
 
 # Theme settings
 doks:
-    color_theme: # Available themes: blue (default), green, purple, red and yellow
+    color_theme: red # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
             text: Next.js Starter 
