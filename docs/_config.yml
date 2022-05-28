@@ -3,7 +3,7 @@ exclude: ['README.md', 'CHANGELOG.md' ]
 # Theme settings
 doks:
     baseurl: https://mortocks.github.io/nest-starter
-    color_theme: red # Available themes: blue (default), green, purple, red and yellow
+    color_theme: yellow # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
             text: Next.js Starter 

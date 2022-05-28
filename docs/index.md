@@ -21,8 +21,8 @@ author:
 
 # Grid navigation
 grid_navigation:
-    - title: Grid navigation
-      excerpt: Section description
+    - title: Getting started
+      excerpt: Get the codebase running on your local machine
       cta: Read more
-      url: '#'
+      url: '/getting-started'
 ---
